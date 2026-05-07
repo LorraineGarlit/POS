@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="admin-page">
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="side-logo">
+
+        <a href="/profile" class="side-link active"><i class="fa-solid fa-user"></i></a>
+        <a href="#"><i class="fa-solid fa-basket-shopping"></i></a>
+        <a href="#"><i class="fa-solid fa-chart-simple"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+
+        <div class="side-bottom">
+            <a href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+            <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="profile-main">
+
+        <div class="top-bar">
+            <div>
+                <p>Henry’s Inasal</p>
+                <h2>Smart POS System</h2>
+            </div>
+
+            <div class="admin-user">
+                <i class="fa-solid fa-user"></i>
+                <div>
+                    <strong>{{ username }}</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </div>
+
+        <section class="profile-header">
+            <i class="fa-solid fa-user"></i>
+            <div>
+                <h1>Profile</h1>
+                <p>Manage your account information and preferences.</p>
+            </div>
+        </section>
+
+        <section class="profile-content">
+
+            <div class="profile-card">
+                <div class="avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <h2>{{ username }}</h2>
+                <p class="role-text">Administrator</p>
+
+                <hr>
+
+                <p><i class="fa-solid fa-envelope"></i> Email<br><span>jorge.violanda@gmail.com</span></p>
+                <p><i class="fa-solid fa-phone"></i> Phone<br><span>09567222248</span></p>
+                <p><i class="fa-solid fa-id-card"></i> Member Since<br><span>March 10, 1999</span></p>
+                <p><i class="fa-solid fa-circle-check"></i> Account Status<br><span class="active-status">ACTIVE</span></p>
+            </div>
+
+            <div class="info-card">
+                <h2><i class="fa-solid fa-user-pen"></i> Personal Information</h2>
+
+                <div class="form-grid">
+                    <label>Full Name<input value="Jorge Violanda"></label>
+                    <label>Username<input value="{{ username }}"></label>
+                    <label>Email Address<input value="jorge.violanda@gmail.com"></label>
+                    <label>Date of Birth<input value="April 20, 1963"></label>
+                    <label>Phone Number<input value="09567222248"></label>
+
+                    <label>Gender
+                        <select>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </label>
+
+                    <label>Role
+                        <select>
+                            <option>Administrator</option>
+                            <option>Staff</option>
+                            <option>Cashier</option>
+                        </select>
+                    </label>
+
+                    <label>Department/Branch
+                        <select>
+                            <option>Main Branch</option>
+                            <option>Branch 2</option>
+                        </select>
+                    </label>
+                </div>
+
+                <button class="save-btn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    SAVE CHANGES
+                </button>
+            </div>
+
+        </section>
+
+        <section class="staff-section">
+            <div class="staff-header">
+                <div>
+                    <h2>Staff Management</h2>
+                    <p>Add, manage and remove staff accounts.</p>
+                </div>
+
+                <div class="staff-buttons">
+                    <button class="add-btn"><i class="fa-solid fa-plus"></i> ADD STAFF</button>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i> DELETE STAFF</button>
+                </div>
+            </div>
+
+            <table class="staff-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Department/Branch</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>Maria Santos</td>
+                    <td>maria.santos</td>
+                    <td>Cashier</td>
+                    <td>Main Branch</td>
+                    <td class="active">ACTIVE</td>
+                    <td><button class="edit-btn">✎</button><button class="trash-btn">🗑</button></td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Juan Dela Cruz</td>
+                    <td>juan.delacruz</td>
+                    <td>Staff</td>
+                    <td>Main Branch</td>
+                    <td class="active">ACTIVE</td>
+                    <td><button class="edit-btn">✎</button><button class="trash-btn">🗑</button></td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+    <title>Staff Dashboard</title>
 
-<div class="box">
-    <h1>Welcome {{ user }} 🎉</h1>
-    <a href="/logout">Logout</a>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="main-bg">
+
+<div class="glass-card dashboard-card">
+
+    <img src="{{ url_for('static', filename='logo.png') }}" class="top-logo">
+
+    <h1 class="dash-title">STAFF DASHBOARD</h1>
+
+    <p class="dash-subtitle">
+        Welcome back, {{ username }}!
+    </p>
+
+    <div class="dashboard-buttons">
+
+        <a href="/profile" class="dash-menu">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+
+        <a href="#" class="dash-menu">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span>Orders</span>
+        </a>
+
+        <a href="#" class="dash-menu">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Inventory</span>
+        </a>
+
+        <a href="/logout" class="dash-logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>LOGOUT</span>
+        </a>
+
+    </div>
+
 </div>
 
 </body>

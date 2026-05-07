@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Staff</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="main-bg">
+
+    <div class="glass-card role-card">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="top-logo">
+
+        <a href="/login?role=admin" class="big-btn">Admin</a>
+        <a href="/login?role=staff" class="big-btn">Staff</a>
+    </div>
+
+</body>
+</html>
